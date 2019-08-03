@@ -27,7 +27,7 @@ self.addEventListener('message', (event) => {
 self.__precacheManifest = [
   {
     "url": "404.html",
-    "revision": "06f4911f522d808e372bc38410a4147c"
+    "revision": "0fd2c169a6a2e8e718d1e6f89d9d73ea"
   },
   {
     "url": "assets/css/0.styles.1643b586.css",
@@ -62,11 +62,11 @@ self.__precacheManifest = [
     "revision": "b21082d7652d1758f322213aadf55317"
   },
   {
-    "url": "assets/js/6.22956a89.js",
+    "url": "assets/js/6.10cf8c6b.js",
     "revision": "67cb48d119d109f007b9d745b033ed65"
   },
   {
-    "url": "assets/js/7.596b9c13.js",
+    "url": "assets/js/7.b2409cfc.js",
     "revision": "2cc80995a79f81ca265f4d5be63a767c"
   },
   {
@@ -78,8 +78,8 @@ self.__precacheManifest = [
     "revision": "5ed723f22cebfe98ff9d5a79186ad4ed"
   },
   {
-    "url": "assets/js/app.c4ca30b9.js",
-    "revision": "50fc7c7bcba5cd09e2df58f572cd468e"
+    "url": "assets/js/app.72bf4c2e.js",
+    "revision": "5b09cbcfbd2759f9a36e51187d9ff1f9"
   },
   {
     "url": "edit-tools.png",
@@ -87,11 +87,11 @@ self.__precacheManifest = [
   },
   {
     "url": "index.html",
-    "revision": "77629a360e9a44368a5fe8493328526f"
+    "revision": "90b67c525e162a660edc80e41bc128dd"
   },
   {
     "url": "passages/2018-07-30-webpack-pack-js/index.html",
-    "revision": "53e674927a696f7897f25b3df9a6d7b2"
+    "revision": "c6b0c57a291f680941ebbb9f4435e022"
   }
 ].concat(self.__precacheManifest || []);
 workbox.precaching.precacheAndRoute(self.__precacheManifest, {});

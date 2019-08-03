@@ -7,8 +7,8 @@
   "author": "dsx <876337269@qq.com>",
   "license": "MIT",
   "scripts": {
-    "docs:dev": "vuepress dev docs",
-    "docs:build": "vuepress build docs"
+    "docs:dev": "vuepress dev .",
+    "docs:build": "vuepress build ."
   },
   "devDependencies": {
     "vuepress": "^1.0.3"
