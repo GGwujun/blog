@@ -29,11 +29,11 @@ module.exports = {
       {
         choosen: 'gitalk',
         options: {
-          clientID: '90598b3aa0bcedd7a774',
+          clientID: 'c8097cb5f60fc819c951',
           clientSecret: process.env.clientSecret || '',
           repo: 'blog',
           owner: 'GGwujun',
-          admin: ['ggwujun'],
+          admin: ['GGwujun'],
           id: '<%- frontmatter.commentid || frontmatter.permalink %>',      // Ensure uniqueness and length less than 50
           distractionFreeMode: false,  // Facebook-like distraction free mode
           labels: ['Gitalk', 'Comment'],
