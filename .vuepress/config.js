@@ -5,6 +5,7 @@ const {
 } = require('./config/index')
 
 module.exports = {
+  base: './',
   dest: 'docs',
   locales: localesConf,
   markdown: mdConf,

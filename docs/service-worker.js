@@ -27,11 +27,11 @@ self.addEventListener('message', (event) => {
 self.__precacheManifest = [
   {
     "url": "404.html",
-    "revision": "0fd2c169a6a2e8e718d1e6f89d9d73ea"
+    "revision": "78478a79bbbe568c608ccaefc741c1b8"
   },
   {
-    "url": "assets/css/0.styles.1643b586.css",
-    "revision": "d9cd73a79cb98a687d5591c01f2e5d6a"
+    "url": "assets/css/0.styles.004e7cbc.css",
+    "revision": "24fc9e0ab77af0e53a0254199e3c7027"
   },
   {
     "url": "assets/img/search.83621669.svg",
@@ -78,8 +78,8 @@ self.__precacheManifest = [
     "revision": "5ed723f22cebfe98ff9d5a79186ad4ed"
   },
   {
-    "url": "assets/js/app.72bf4c2e.js",
-    "revision": "5b09cbcfbd2759f9a36e51187d9ff1f9"
+    "url": "assets/js/app.e578d5bf.js",
+    "revision": "ffcfba8ba4729b1f8877a978f90f1d83"
   },
   {
     "url": "edit-tools.png",
@@ -87,11 +87,11 @@ self.__precacheManifest = [
   },
   {
     "url": "index.html",
-    "revision": "90b67c525e162a660edc80e41bc128dd"
+    "revision": "3ba7009e5e252d9d19a0834e3cb7b0f6"
   },
   {
     "url": "passages/2018-07-30-webpack-pack-js/index.html",
-    "revision": "c6b0c57a291f680941ebbb9f4435e022"
+    "revision": "bdedebc138c0c8548b1574245c741c6b"
   }
 ].concat(self.__precacheManifest || []);
 workbox.precaching.precacheAndRoute(self.__precacheManifest, {});
