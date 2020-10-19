@@ -15,5 +15,5 @@ jobs:
         env:
           ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
           BRANCH: master
-          FOLDER: .vuepress/dist
+          FOLDER: ./docs
           BUILD_SCRIPT: npm install && npm run docs:build

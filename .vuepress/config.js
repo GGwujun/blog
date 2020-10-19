@@ -2,6 +2,7 @@ const { mdConf, themeConf, localesConf } = require("./config/index");
 
 module.exports = {
   base: "/",
+  dest: "./docs",
   locales: localesConf,
   markdown: mdConf,
   themeConfig: themeConf,
