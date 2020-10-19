@@ -1,0 +1,16 @@
+{
+  "name": "webpack_study",
+  "version": "1.0.0",
+  "description": "study webpack babel",
+  "main": "index.js",
+  "author": "高武军@18570148691@163.com",
+  "license": "MIT",
+  "devDependencies": {
+    "clean-webpack-plugin": "^3.0.0",
+    "html-webpack-plugin": "^3.2.0",
+    "webpack": "^4.37.0",
+    "webpack-bundle-analyzer": "^3.3.2",
+    "webpack-cli": "^3.3.6",
+    "webpack-merge": "^4.2.1"
+  }
+}

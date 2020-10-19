@@ -1,0 +1,33 @@
+{
+  "name": "webpack-splitchunks",
+  "version": "1.0.0",
+  "description": "Introduce how to use webpack.splitChunks",
+  "main": "./src/index.js",
+  "scripts": {
+    "link": "webpack --config ./config/webpack.config.link.css.js",
+    "style": "webpack --config ./config/webpack.config.style.css.js",
+    "dynamic": "webpack --config ./config/webpack.config.dynamic.css.js",
+    "transform": "webpack --config ./config/webpack.config.transform.css.js",
+    "mini": "webpack --config ./config/webpack.config.mini.css.js"
+  },
+  "author": "kwzm",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-loader": "^8.0.6",
+    "clean-webpack-plugin": "^3.0.0",
+    "css-loader": "^3.0.0",
+    "file-loader": "^4.0.0",
+    "html-webpack-plugin": "^3.2.0",
+    "mini-css-extract-plugin": "^0.7.0",
+    "style-loader": "^0.23.1",
+    "webpack": "^4.35.2",
+    "webpack-bundle-analyzer": "^3.3.2",
+    "webpack-cli": "^3.3.5",
+    "webpack-merge": "^4.2.1"
+  },
+  "dependencies": {
+    "lodash": "^4.17.11",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6"
+  }
+}
