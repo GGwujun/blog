@@ -4,6 +4,7 @@ module.exports = {
   base: "/",
   locales: localesConf,
   markdown: mdConf,
+  // theme: require.resolve("./theme"),
   themeConfig: themeConf,
   plugins: [
     require("./plugins/my-router"),
