@@ -16,8 +16,8 @@ export default defineConfig({
       }),
 
   logo: "http://wued.winning-health.com.cn:8088/win-design/icon.png",
-  base: isVercel ? "" : "/blog",
-  publicPath: isVercel ? "" : "/blog/",
+  base: isVercel ? "/" : "/blog",
+  publicPath: isVercel ? "/" : "/blog/",
   favicon: "http://wued.winning-health.com.cn:8088/win-design/icon.png",
   mode: "site",
   title: "winex",
