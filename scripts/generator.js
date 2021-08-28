@@ -3,15 +3,18 @@ var { Sitdown } = require("sitdown");
 const fs = require("fs");
 const path = require("path");
 const rimraf = require("rimraf");
-const books = require("../books");
+const { books } = require("../books");
 const { strict } = require("assert");
 
 const rmTrin = function (str) {
-  return str.replace(/\s/g, "").replace(/\//g,'').replace(/\(([^)]*)\)/, "");
+  return str
+    .replace(/\s/g, "")
+    .replace(/\//g, "")
+    .replace(/\(([^)]*)\)/, "");
 };
 
 const getList = function (index) {
-  return index < 9 ? `0${index+1}` : index+1;
+  return index < 9 ? `0${index + 1}` : index + 1;
 };
 
 const createDocDir = function (book) {
@@ -87,7 +90,7 @@ const clearDocs = function () {
 };
 
 clearDocs();
-createDocDir()
+createDocDir();
 
 const createRepo = function (book) {
   createRepoDir(book);

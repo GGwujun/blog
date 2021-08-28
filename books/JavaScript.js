@@ -1,4 +1,4 @@
-exports.title = 'JavaScript核心原理解析'
+exports.title = 'java-script核心原理解析'
 exports.data = [
   {
     chapterTitle: "开篇词 (1讲)",
