@@ -30,7 +30,7 @@ jobs:
 
       - name: 3. script deploy
         env:
-          ACCESS_TOKEN_DEPLOY: ${{secrets.ACCESS_TOKEN}}
+          ACCESS_TOKEN_DEPLOY: ${{secrets.ACCESS_TOKEN_RSA}}
           PUBLISH_BRANCH: gh-pages
           PUBLISH_DIR: ./dist
           CNAME: dashixiong.com
