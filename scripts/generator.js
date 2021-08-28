@@ -14,6 +14,13 @@ const getList = function (index) {
   return index < 9 ? `0${index+1}` : index+1;
 };
 
+const createDocDir = function (book) {
+  const DocDir = `docs`;
+  if (!fs.existsSync(DocDir)) {
+    fs.mkdirSync(DocDir);
+  }
+};
+
 const createRepoDir = function (book) {
   const repoDir = `docs/${book.title}`;
   if (!fs.existsSync(repoDir)) {
@@ -80,6 +87,7 @@ const clearDocs = function () {
 };
 
 clearDocs();
+createDocDir()
 
 const createRepo = function (book) {
   createRepoDir(book);
