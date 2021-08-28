@@ -24,12 +24,12 @@ export default defineConfig({
         ssr: {},
       }),
 
-  logo: "http://wued.winning-health.com.cn:8088/win-design/icon.png",
+  logo: "/logo.png",
   base: isVercel ? "/" : "/blog",
   publicPath: isVercel ? "/" : "/blog/",
-  favicon: "http://wued.winning-health.com.cn:8088/win-design/icon.png",
+  favicon: "/logo.png",
   mode: "site",
-  title: "winex",
+  title: "大师兄",
   locales: [["zh-CN", "中文"]],
   resolve: {
     includes: ["./src", "./docs"],
