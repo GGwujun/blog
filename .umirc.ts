@@ -4,7 +4,7 @@ import { defineConfig } from "dumi";
 const isDev = process.env.NODE_ENV === "development";
 const isVercel = process.env.VERCEL;
 
-console.log('isVercel',isVercel);
+console.log('isVercel',process.env);
 
 export default defineConfig({
   ...(isDev
