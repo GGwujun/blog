@@ -2,6 +2,9 @@
 import { defineConfig } from "dumi";
 
 const isDev = process.env.NODE_ENV === "development";
+const isVercel = process.env.VERCEL;
+
+console.log('isVercel',isVercel);
 
 export default defineConfig({
   ...(isDev
@@ -13,19 +16,17 @@ export default defineConfig({
       }),
 
   logo: "http://wued.winning-health.com.cn:8088/win-design/icon.png",
-  base: "/blog",
-  publicPath: "/blog/",
+  base: isVercel ? "" : "/blog",
+  publicPath: isVercel ? "" : "/blog/",
   favicon: "http://wued.winning-health.com.cn:8088/win-design/icon.png",
   mode: "site",
   title: "winex",
   locales: [["zh-CN", "中文"]],
   resolve: {
-    includes: ["./src","./docs"],
+    includes: ["./src", "./docs"],
     previewLangs: [],
   },
-  navs: [
-    null,
-  ],
+  navs: [null],
   polyfill: false,
   nodeModulesTransform: {
     type: "none",
