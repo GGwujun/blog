@@ -13,8 +13,8 @@ export default defineConfig({
       }),
 
   logo: "http://wued.winning-health.com.cn:8088/win-design/icon.png",
-  base: "/docs-winex-cli",
-  publicPath: "/docs-winex-cli/",
+  base: "/blog",
+  publicPath: "/blog/",
   favicon: "http://wued.winning-health.com.cn:8088/win-design/icon.png",
   mode: "site",
   title: "winex",
@@ -25,14 +25,6 @@ export default defineConfig({
   },
   navs: [
     null,
-    {
-      title: "物料开发",
-      path: "https://cool-fe.github.io/winex-material-doc/guides/",
-    },
-    {
-      title: "GitHub",
-      path: "https://github.com/cool-fe/winex-cli",
-    },
   ],
   polyfill: false,
   nodeModulesTransform: {
