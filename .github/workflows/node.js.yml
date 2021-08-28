@@ -1,31 +1,39 @@
-name: Deploy GitHub Pages
+name: doc CI
 
-# 触发条件：在 push 到 master 分支后
-on:
+on: 
   push:
     branches:
       - master
 
-# 任务
 jobs:
-  build-and-deploy:
-    # 服务器环境：最新版 Ubuntu
+  build:
     runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [12.x]
+
     steps:
-      # 拉取代码
-      - name: Checkout
-        uses: actions/checkout@v2
+      - uses: actions/checkout@v1
+      - name: 1. set environment
+        uses: actions/setup-node@v1
         with:
-          persist-credentials: false
+          node-version: ${{ matrix.node-version }}
+      - name: 2. install dep
+        run: |
+          rm -rf node_modules
+          yarn install
+          yarn run generator
+          yarn run build
+        env:
+          CI: true
 
-      # 生成静态文件
-      - name: Build
-        run: npm install && npm run docs:build
-
-      # 部署到 GitHub Pages
-      - name: Deploy
-        uses: JamesIves/github-pages-deploy-action@releases/v3
-        with:
-          ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
-          BRANCH: gh-pages
-          FOLDER: .vuepress/dist
+      - name: 3. script deploy
+        env:
+          ACCESS_TOKEN_DEPLOY: ${{secrets.ACCESS_TOKEN}}
+          PUBLISH_BRANCH: gh-pages
+          PUBLISH_DIR: ./dist
+          CNAME: dashixiong.com
+        run: |
+          chmod +x ./scripts/deploy.sh
+          bash ./scripts/deploy.sh
