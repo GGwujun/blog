@@ -9,13 +9,13 @@ const computer = require("./computer");
 const designPattern = require("./designPattern");
 
 module.exports = [
+  computer,
   net,
-  algorithm,
-  dataStructure,
   http,
+  dataStructure,
+  algorithm,
   manager,
   browser,
   javascript,
-  computer,
   designPattern,
 ];

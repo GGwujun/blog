@@ -34,7 +34,7 @@ const category = {
     data: [],
   },
   other: {
-    title: "其他",
+    title: "杂谈",
     data: [],
   },
 };
