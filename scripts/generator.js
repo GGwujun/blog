@@ -3,7 +3,7 @@ var { Sitdown } = require("sitdown");
 const fs = require("fs");
 const path = require("path");
 const rimraf = require("rimraf");
-const { books } = require("../books");
+const books  = require("../books");
 const { strict } = require("assert");
 
 const rmTrin = function (str) {

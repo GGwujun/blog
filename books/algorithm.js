@@ -1,3 +1,4 @@
+exports.category = 'algorithm'
 exports.title = '常用算法25讲'
 exports.data = [
   {

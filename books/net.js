@@ -1,3 +1,5 @@
+exports.category = 'computer'
+exports.title = '趣谈网络协议'
 exports.data =  [
   {
     chapterTitle: "开篇词 (1讲)",
@@ -478,4 +480,3 @@ exports.data =  [
     ],
   },
 ];
-exports.title = '趣谈网络协议'

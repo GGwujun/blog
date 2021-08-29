@@ -1,3 +1,4 @@
+exports.category = 'architect'
 exports.title = '设计模式之美'
 exports.data = [
     {

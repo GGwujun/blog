@@ -1,3 +1,4 @@
+exports.category = 'computer'
 exports.title = "深入浅出计算机组成原理";
 exports.data = [
     {

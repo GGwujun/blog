@@ -1,3 +1,4 @@
+exports.category = 'computer'
 exports.title = "详解http";
 exports.data = [
   {

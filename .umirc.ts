@@ -1,19 +1,10 @@
 // Config for dumi
 import { defineConfig } from "dumi";
-import { nav } from "./books";
+import { getBookNavs } from "./scripts/navs";
 
 const isDev = process.env.NODE_ENV === "development";
 const isVercel = process.env.IS_VERCEL;
 
-const getNav = function () {
-  return Object.keys(nav).map((cla) => ({
-    title: nav[cla].title,
-    children: nav[cla].data.map((book) => ({
-      title: book.title,
-      path: `/${book.title}`,
-    })),
-  }));
-};
 
 export default defineConfig({
   ...(isDev
@@ -35,7 +26,7 @@ export default defineConfig({
     includes: ["./src", "./docs"],
     previewLangs: [],
   },
-  navs: [...getNav()],
+  navs: [...getBookNavs()],
   polyfill: false,
   nodeModulesTransform: {
     type: "none",

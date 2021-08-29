@@ -1,3 +1,4 @@
+exports.category = 'algorithm'
 exports.title = "数据结构与算法之美";
 exports.data = [
   {

@@ -1,3 +1,4 @@
+exports.category = 'manage'
 exports.title = "技术管理实战36讲";
 exports.data = [
   {

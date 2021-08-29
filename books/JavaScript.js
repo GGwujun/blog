@@ -1,3 +1,4 @@
+exports.category = 'frontend'
 exports.title = 'java-script核心原理解析'
 exports.data = [
   {
