@@ -1,21 +1,12 @@
-const net = require("./net");
-const algorithm = require("./algorithm");
-const dataStructure = require("./dataStructure");
-const http = require("./http");
-const manager = require("./manger");
-const browser = require("./browser");
-const javascript = require("./JavaScript");
-const computer = require("./computer");
-const designPattern = require("./designPattern");
+const glob = require("glob");
+const path = require("path");
 
-module.exports = [
-  computer,
-  net,
-  http,
-  dataStructure,
-  algorithm,
-  manager,
-  browser,
-  javascript,
-  designPattern,
-];
+module.exports = glob
+  .sync("*.js", {
+    nodir: true,
+    cwd: __dirname,
+  })
+  .map((file) => {
+    if (file !== "index.js") return require(path.resolve(__dirname, file));
+  })
+  .filter(Boolean);
