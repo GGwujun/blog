@@ -1,5 +1,5 @@
 exports.category = "architect";
-exports.title = "MySQL实战45讲";
+exports.title = "mysql实战45讲";
 exports.data = [
   {
     chapterTitle: "开篇词 (1讲)",

@@ -1,5 +1,5 @@
 exports.category = "backend";
-exports.title = "Go语言核心36讲";
+exports.title = "go语言核心36讲";
 exports.data = [
   {
     chapterTitle: "导读 (3讲)",

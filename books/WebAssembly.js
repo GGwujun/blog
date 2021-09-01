@@ -1,5 +1,5 @@
 exports.category = "frontend";
-exports.title = "WebAssembly入门";
+exports.title = "webassembly入门";
 exports.data = [
   {
     chapterTitle: "课前必读 (3讲)",

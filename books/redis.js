@@ -1,5 +1,5 @@
 exports.category = "backend";
-exports.title = "Redis核心技术与实战";
+exports.title = "redis核心技术与实战";
 exports.data = [
   {
     chapterTitle: "开篇词 (1讲)",

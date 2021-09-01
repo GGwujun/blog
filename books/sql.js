@@ -1,5 +1,5 @@
 exports.category = "computer";
-exports.title = "SQL必知必会";
+exports.title = "sql必知必会";
 exports.data = [
   {
     chapterTitle: "开篇词 (1讲)",

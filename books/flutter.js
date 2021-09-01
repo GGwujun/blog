@@ -1,5 +1,5 @@
 exports.category = "frontend";
-exports.title = "Flutter核心技术与实战";
+exports.title = "flutter核心技术与实战";
 exports.data = [
   {
     chapterTitle: "课前必读 (3讲)",

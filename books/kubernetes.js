@@ -1,5 +1,5 @@
 exports.category = "architect";
-exports.title = "深入剖析Kubernetes";
+exports.title = "深入剖析kubernetes";
 exports.data = [
     {
         "chapterTitle": "课前必读 (5讲)",

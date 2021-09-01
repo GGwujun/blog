@@ -1,5 +1,5 @@
 exports.category = "architect";
-exports.title = "OpenResty从入门到实战";
+exports.title = "openresty从入门到实战";
 exports.data = [
   {
     chapterTitle: "开篇词 (1讲)",

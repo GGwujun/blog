@@ -1,5 +1,5 @@
 exports.category = "frontend";
-exports.title = "图解GoogleV8";
+exports.title = "图解googlev8";
 exports.data = [
   {
     chapterTitle: "宏观视角 (2讲)",

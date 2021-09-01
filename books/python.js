@@ -1,5 +1,5 @@
 exports.category = "backend";
-exports.title = "零基础学Python";
+exports.title = "零基础学python";
 exports.data = [
   {
     chapterTitle: "第一章 ：Python介绍和安装 (3讲)",
