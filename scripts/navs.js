@@ -22,6 +22,10 @@ const category = {
     title: "前端开发",
     data: [],
   },
+  backend: {
+    title: "后端开发",
+    data: [],
+  },
   fengine: {
     title: "前端工程化",
     data: [],
@@ -53,7 +57,6 @@ const getNav = function (nav) {
     })),
   }));
 };
-
 
 exports.getBookNavs = function () {
   [...bookNavs, ...scan(CUSTOM_DOC_ROOT_PATH)].forEach((book) => {
