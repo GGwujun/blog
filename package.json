@@ -9,8 +9,7 @@
   "scripts": {
     "generator": "node ./scripts/generator.js",
     "build": "dumi build",
-    "dev": "dumi dev",
-    "prettier": "prettier --write '**/*.{js,jsx,tsx,ts,less,md,json}'"
+    "dev": "dumi dev"
   },
   "devDependencies": {
     "dayjs": "^1.9.3",
@@ -20,6 +19,7 @@
   "dependencies": {
     "@umijs/utils": "^3.5.17",
     "dumi": "^1.0.13",
+    "glob": "^7.1.7",
     "rimraf": "^3.0.2",
     "sitdown": "^1.1.7",
     "umi-plugin-hire": "^1.0.3"

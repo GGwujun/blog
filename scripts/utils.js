@@ -13,7 +13,11 @@ function scan(parentPath, toc = []) {
     const folderPath = path.resolve(parentPath, folderName);
     const fileStat = fs.statSync(folderPath);
     if (!folderName.startsWith(".")) {
-      if (fileStat.isFile() && folderName.endsWith(".md")) {
+      if (
+        fileStat.isFile() &&
+        !["README.md", "index.md"].includes(folderName) &
+          folderName.endsWith(".md")
+      ) {
         const fileName = folderName.replace(/^\d+\./, "").replace(/\.md$/, "");
         toc.push({
           title: fileName,

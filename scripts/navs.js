@@ -1,6 +1,11 @@
-const path = require('path')
+const path = require("path");
 const books = require("../books");
 const { scan } = require("./utils");
+
+const bookNavs = books.map((res) => ({
+  title: res.title,
+  category: res.category,
+}));
 
 const CUSTOM_DOC_ROOT_PATH = path.resolve(process.cwd(), "src");
 
@@ -15,6 +20,10 @@ const category = {
   },
   frontend: {
     title: "前端开发",
+    data: [],
+  },
+  backend: {
+    title: "后端开发",
     data: [],
   },
   fengine: {
@@ -50,7 +59,7 @@ const getNav = function (nav) {
 };
 
 exports.getBookNavs = function () {
-  [...books, ...scan(CUSTOM_DOC_ROOT_PATH)].forEach((book) => {
+  [...bookNavs, ...scan(CUSTOM_DOC_ROOT_PATH)].forEach((book) => {
     category[book.category || "other"].data.push(book);
   });
   return getNav(category);
