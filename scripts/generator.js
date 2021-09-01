@@ -65,9 +65,10 @@ const createSummary = function (book) {
   book.data.forEach((chapter, index) => {
     // 一级目录
     const firstToc = chapter.chapterTitle;
-    summaryData += `- [${getList(index)}.${rmTrin(chapter.chapterTitle)}]()\n`;
+    const parentLinkName = `/${book.title}/${getList(index)}.${rmTrin(chapter.chapterTitle)}`;
+    summaryData += `- [${parentLinkName}](${parentLinkName})\n`;
     chapter.children.forEach((article, i) => {
-      summaryData += `  - [${article.article_title}](${getList(i)})\n`;
+      summaryData += `  - [${article.article_title}](${parentLinkName}/${getList(i)})\n`;
     });
   });
 
