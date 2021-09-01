@@ -11,17 +11,13 @@
     "build": "dumi build",
     "dev": "dumi dev"
   },
-  "devDependencies": {
-    "dayjs": "^1.9.3",
-    "remove-markdown": "^0.3.0",
-    "vue-feather-icons": "^5.1.0"
-  },
+  "devDependencies": {},
   "dependencies": {
     "@umijs/utils": "^3.5.17",
     "dumi": "^1.0.13",
     "glob": "^7.1.7",
     "rimraf": "^3.0.2",
-    "sitdown": "^1.1.7",
-    "umi-plugin-hire": "^1.0.3"
+    "umi-plugin-hire": "^1.0.3",
+    "chalk": "^4.1.2"
   }
 }

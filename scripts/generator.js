@@ -1,10 +1,23 @@
 // Node
-var { Sitdown } = require("sitdown");
+var { Sitdown } = require("../packages/sitdown");
 const fs = require("fs");
 const path = require("path");
 const rimraf = require("rimraf");
-const books  = require("../books");
+const chalk = require("chalk");
+const books = require("../books");
 const { strict } = require("assert");
+
+const isDev =
+  process.argv.slice(2) && process.argv.slice(2).includes("DEBUG");
+
+const logger = {
+  log: function (str) {
+    if (!isDev) return;
+    else {
+      console.log(str);
+    }
+  },
+};
 
 const rmTrin = function (str) {
   return str
@@ -65,13 +78,20 @@ const createSummary = function (book) {
 const createDocs = function (book) {
   var sitdown = new Sitdown();
   const bookDir = `docs/${book.title}`;
+  logger.log(chalk.green(`create book: ${book.title}`));
   book.data.forEach((chapter, index) => {
     const dir = rmTrin(chapter.chapterTitle);
     const chapterDir = `${bookDir}/${getList(index)}.${dir}`;
     if (!fs.existsSync(chapterDir)) {
       fs.mkdirSync(chapterDir);
     }
+
+    logger.log(chalk.yellow(`  create book chapter:${chapter.chapterTitle}`));
+
     chapter.children.forEach((article, i) => {
+      logger.log(
+        chalk.white(`    create book article:${article.article_title}`)
+      );
       const mdContent = `---
 date: "2019-06-23"
 ---  

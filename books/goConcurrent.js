@@ -1,5 +1,5 @@
 exports.category = "backend";
-exports.title = "Go 并发编程实战";
+exports.title = "Go并发编程实战";
 exports.data = [
   {
     chapterTitle: "开篇词 (1讲)",
