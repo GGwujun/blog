@@ -22,24 +22,12 @@ const category = {
     title: "前端开发",
     data: [],
   },
-  backend: {
-    title: "后端开发",
-    data: [],
-  },
   fengine: {
     title: "前端工程化",
     data: [],
   },
   performance: {
     title: "前端性能优化",
-    data: [],
-  },
-  architect: {
-    title: "架构师",
-    data: [],
-  },
-  manage: {
-    title: "管理",
     data: [],
   },
   other: {
