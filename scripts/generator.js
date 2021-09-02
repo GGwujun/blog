@@ -23,13 +23,10 @@ const rmTrin = function (str) {
     .replace(/\s/g, "")
     .replace(/\//g, "")
     .replace(/\(([^)]*)\)/, "")
-    .replace(/\*/g," ")
-    .replace(/（/g,"(")
-    .replace(/）/g,")")
-    .replace(/%/g,"百分")
-
-
-
+    .replace(/\*/g, " ")
+    .replace(/（/g, "(")
+    .replace(/）/g, ")")
+    .replace(/\%/g, "");
 };
 
 const getList = function (index) {
@@ -108,7 +105,10 @@ date: "2019-06-23"
 ---  
       
 # ${chapter.article_title}\n${sitdown.HTMLToMD(chapter.content)}`;
-      fs.writeFileSync(`${articleDir.replace(/\|/,' ').replace(/[\?：，]/g,'')}.md`, mdContent);
+      fs.writeFileSync(
+        `${articleDir.replace(/\|/, " ").replace(/[\?：，]/g, "")}.md`,
+        mdContent
+      );
     } else {
       const dir = rmTrin(chapter.chapterTitle);
       const chapterDir = `${bookDir}/${getList(index)}.${dir}`;

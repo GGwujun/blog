@@ -748,10 +748,10 @@ var applyIndentedCodeBlockRule = function applyIndentedCodeBlockRule(service) {
     replacement: function replacement(_, node, options) {
       var indent = repeat(" ", caclListIndent(node, options));
       return node.firstChild && node.firstChild.textContent
-        ? "\n\n" +
+        ? "\n\n```\n" +
             indent +
             node.firstChild.textContent.replace(/\n/g, "\n" + indent) +
-            "\n\n"
+            "\n\n```\n"
         : "\n\n    \n\n";
     },
   });
