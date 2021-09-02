@@ -7,8 +7,7 @@ const chalk = require("chalk");
 const books = require("../books");
 const { strict } = require("assert");
 
-const isDev =
-  process.argv.slice(2) && process.argv.slice(2).includes("DEBUG");
+const isDev = process.argv.slice(2) && process.argv.slice(2).includes("DEBUG");
 
 const logger = {
   log: function (str) {
@@ -23,7 +22,12 @@ const rmTrin = function (str) {
   return str
     .replace(/\s/g, "")
     .replace(/\//g, "")
-    .replace(/\(([^)]*)\)/, "");
+    .replace(/\(([^)]*)\)/, "")
+    .replace(/\*/g," ")
+    .replace(/（/g,"(")
+    .replace(/）/g,")")
+
+
 };
 
 const getList = function (index) {
@@ -65,11 +69,24 @@ const createSummary = function (book) {
   book.data.forEach((chapter, index) => {
     // 一级目录
     const firstToc = chapter.chapterTitle;
-    const parentLinkName = `/${book.title}/${getList(index)}.${rmTrin(chapter.chapterTitle)}`;
-    summaryData += `- [${parentLinkName}](${parentLinkName})\n`;
-    chapter.children.forEach((article, i) => {
-      summaryData += `  - [${article.article_title}](${parentLinkName}/${getList(i)})\n`;
-    });
+    // 只有一级目录
+    if (!firstToc) {
+      const parentLink = `/${book.title}/${rmTrin(chapter.article_title)}`;
+      summaryData += `- [${chapter.article_title}](${parentLink})\n`;
+    } else {
+      const parentLinkName = `${getList(index)}.${rmTrin(
+        chapter.chapterTitle
+      )}`;
+      const parentLink = `/${book.title}/${getList(index)}.${rmTrin(
+        chapter.chapterTitle
+      )}`;
+      summaryData += `- [${parentLinkName}](${parentLink})\n`;
+      chapter.children.forEach((article, i) => {
+        summaryData += `  - [${article.article_title}](${parentLink}/${getList(
+          i
+        )})\n`;
+      });
+    }
   });
 
   fs.writeFileSync(summaryDir, summaryData);
@@ -81,26 +98,37 @@ const createDocs = function (book) {
   const bookDir = `docs/${book.title}`;
   logger.log(chalk.green(`create book: ${book.title}`));
   book.data.forEach((chapter, index) => {
-    const dir = rmTrin(chapter.chapterTitle);
-    const chapterDir = `${bookDir}/${getList(index)}.${dir}`;
-    if (!fs.existsSync(chapterDir)) {
-      fs.mkdirSync(chapterDir);
-    }
-
-    logger.log(chalk.yellow(`  create book chapter:${chapter.chapterTitle}`));
-
-    chapter.children.forEach((article, i) => {
-      logger.log(
-        chalk.white(`    create book article:${article.article_title}`)
-      );
+    if (!chapter.chapterTitle) {
+      const articleDir = `${bookDir}/${rmTrin(chapter.article_title)}`;
+      logger.log(chalk.white(`  create book article:${chapter.article_title}`));
       const mdContent = `---
+date: "2019-06-23"
+---  
+      
+# ${chapter.article_title}\n${sitdown.HTMLToMD(chapter.content)}`;
+      fs.writeFileSync(`${articleDir.replace(/\|/,' ').replace(/[\?：，]/g,'')}.md`, mdContent);
+    } else {
+      const dir = rmTrin(chapter.chapterTitle);
+      const chapterDir = `${bookDir}/${getList(index)}.${dir}`;
+      if (!fs.existsSync(chapterDir)) {
+        fs.mkdirSync(chapterDir);
+      }
+
+      logger.log(chalk.yellow(`  create book chapter:${chapter.chapterTitle}`));
+
+      chapter.children.forEach((article, i) => {
+        logger.log(
+          chalk.white(`    create book article:${article.article_title}`)
+        );
+        const mdContent = `---
 date: "2019-06-23"
 ---  
       
 # ${article.article_title}\n${sitdown.HTMLToMD(article.content)}`;
 
-      fs.writeFileSync(`${chapterDir}/${getList(i)}.md`, mdContent);
-    });
+        fs.writeFileSync(`${chapterDir}/${getList(i)}.md`, mdContent);
+      });
+    }
   });
 };
 
