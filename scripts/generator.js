@@ -26,7 +26,9 @@ const rmTrin = function (str) {
     .replace(/\*/g, " ")
     .replace(/（/g, "(")
     .replace(/）/g, ")")
-    .replace(/\%/g, "");
+    .replace(/\%/g, "")
+    .replace(/\|/, " ")
+    .replace(/[\?：，]/g, "");
 };
 
 const getList = function (index) {
@@ -105,10 +107,7 @@ date: "2019-06-23"
 ---  
       
 # ${chapter.article_title}\n${sitdown.HTMLToMD(chapter.content)}`;
-      fs.writeFileSync(
-        `${articleDir.replace(/\|/, " ").replace(/[\?：，]/g, "")}.md`,
-        mdContent
-      );
+      fs.writeFileSync(`${articleDir}.md`, mdContent);
     } else {
       const dir = rmTrin(chapter.chapterTitle);
       const chapterDir = `${bookDir}/${getList(index)}.${dir}`;
@@ -132,6 +131,10 @@ date: "2019-06-23"
       });
     }
   });
+
+  console.log(
+    chalk.green(`successfully generator book:${book.title}|${index + 1}`)
+  );
 };
 
 const clearDocs = function () {
