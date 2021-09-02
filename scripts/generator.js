@@ -65,7 +65,7 @@ const createSummary = function (book) {
   const summaryDir = `docs/${book.title}/summary.md`;
   const indexDir = `docs/${book.title}/index.md`;
 
-  let summaryData = "";
+  let summaryData = `# ${book.title}\n`;
   book.data.forEach((chapter, index) => {
     // 一级目录
     const firstToc = chapter.chapterTitle;
