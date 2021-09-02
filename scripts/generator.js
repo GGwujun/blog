@@ -133,7 +133,7 @@ date: "2019-06-23"
   });
 
   console.log(
-    chalk.green(`successfully generator book:${book.title}|${index + 1}`)
+    chalk.green(`successfully generator book:${book.title}|${book.data.length}`)
   );
 };
 
