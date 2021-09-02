@@ -73,7 +73,7 @@ const createSummary = function (book) {
     // 只有一级目录
     if (!firstToc) {
       const parentLink = `/${book.title}/${rmTrin(chapter.article_title)}`;
-      summaryData += `- [${chapter.article_title}](${parentLink})\n`;
+      summaryData += `[${chapter.article_title}](${parentLink})\n`;
     } else {
       const parentLinkName = `${getList(index)}.${rmTrin(
         chapter.chapterTitle
