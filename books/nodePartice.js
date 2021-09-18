@@ -1,5 +1,5 @@
 exports.category = "frontend";
-exports.title = "nodejs 应用开发实战";
+exports.title = "nodejs应用开发实战";
 exports.data = [
   {
     chapterTitle: "开篇词",
