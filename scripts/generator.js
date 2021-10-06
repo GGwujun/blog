@@ -72,15 +72,15 @@ const createSummary = function (book) {
     const firstToc = chapter.chapterTitle;
     // 只有一级目录
     if (!firstToc) {
-      const parentLink = `/${book.title}/${rmTrin(chapter.article_title).replace(/([a-z])([A-Z])/g,$1-$2).toLowerCase()}`;
+      const parentLink = `/${book.title}/${rmTrin(chapter.article_title).replace(/([a-z])([A-Z])/g,function(a,b,c){return `${b}-${c}`}).toLowerCase()}`;
       summaryData += `[${chapter.article_title}](${parentLink})\n`;
     } else {
       const parentLinkName = `${getList(index)}.${rmTrin(
         chapter.chapterTitle
-      ).replace(/([a-z])([A-Z])/g,$1-$2).toLowerCase()}`;
+      ).replace(/([a-z])([A-Z])/g,function(a,b,c){return `${b}-${c}`}).toLowerCase()}`;
       const parentLink = `/${book.title}/${getList(index)}.${rmTrin(
         chapter.chapterTitle
-      ).replace(/([a-z])([A-Z])/g,$1-$2).toLowerCase()}`;
+      ).replace(/([a-z])([A-Z])/g,function(a,b,c){return `${b}-${c}`}).toLowerCase()}`;
       summaryData += `- [${parentLinkName}](${parentLink})\n`;
       chapter.children.forEach((article, i) => {
         summaryData += `  - [${article.article_title}](${parentLink}/${getList(
