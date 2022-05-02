@@ -30,6 +30,14 @@ const category = {
     title: "前端性能优化",
     data: [],
   },
+  test: {
+    title: "软件测试",
+    data: [],
+  },
+  interview: {
+    title: "面试",
+    data: [],
+  },
   other: {
     title: "杂谈",
     data: [],
