@@ -30,8 +30,16 @@ const category = {
     title: "前端性能优化",
     data: [],
   },
+  app: {
+    title: "移动端开发",
+    data: [],
+  },
   test: {
     title: "软件测试",
+    data: [],
+  },
+  product: {
+    title: "产品与用户体验",
     data: [],
   },
   interview: {
