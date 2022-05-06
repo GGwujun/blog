@@ -8,7 +8,7 @@
   "license": "MIT",
   "scripts": {
     "generator": "node ./scripts/generator.js",
-    "build": "node --max_old_space_size=10240 ./node_modules/dumi/bin/dumi.js build",
+    "build": "node --max_old_space_size=102400 ./node_modules/dumi/bin/dumi.js build",
     "dev": "dumi dev"
   },
   "devDependencies": {},
