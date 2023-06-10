@@ -272,7 +272,7 @@ exports.data = [
     ],
   },
   {
-    chapterTitle: "Article 5：InfoQ's 2019, and Software Predictions…",
+    chapterTitle: "Article 5：Info 2019, and Software Predictions…",
     children: [
       {
         title: "26 | 阅读准备：当我们谈论快速阅读时，我们究竟在谈论什么？",

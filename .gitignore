@@ -3,3 +3,7 @@ node_modules
 .umi-production
 docs
 /dist
+
+.dumi/tmp
+.dumi/tmp-test
+.dumi/tmp-production

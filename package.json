@@ -7,17 +7,20 @@
   "author": "dsx <876337269@qq.com>",
   "license": "MIT",
   "scripts": {
-    "generator": "node ./scripts/generator.js",
+    "generator": "node  --max_old_space_size=102400 ./scripts/generator.js",
     "build": "node --max_old_space_size=102400 ./node_modules/dumi/bin/dumi.js build",
-    "dev": "dumi dev"
+    "dev": "dumi dev",
+    "prepare": "dumi setup"
   },
   "devDependencies": {},
   "dependencies": {
     "@umijs/utils": "^3.5.17",
-    "dumi": "^1.0.13",
+    "chalk": "^4.1.2",
+    "dumi": "^2.0.0",
     "glob": "^7.1.7",
+    "node-fetch": "2",
     "rimraf": "^3.0.2",
-    "umi-plugin-hire": "^1.0.3",
-    "chalk": "^4.1.2"
+    "transliteration": "^2.2.0",
+    "umi-plugin-hire": "^1.0.3"
   }
 }

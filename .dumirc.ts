@@ -5,32 +5,19 @@ import { getBookNavs } from "./scripts/navs";
 const isDev = process.env.NODE_ENV === "development";
 const isVercel = process.env.IS_VERCEL;
 
-
-export default defineConfig({
-  ...(isDev
-    ? {
-        dynamicImport: {},
-      }
-    : {
-        ssr: {},
-      }),
-
-  logo: "/logo.png",
+export default defineConfig({  
   base: isVercel ? "/" : "/blog",
   publicPath: isVercel ? "/" : "/blog/",
-  favicon: "/logo.png",
-  mode: "site",
-  title: "大师兄",
-  locales: [["zh-CN", "中文"]],
+  favicons: ["/logo.png"],
+  themeConfig: { name: "大师兄",logo: "/logo.png",nav: [...getBookNavs()], },
+  locales: [{ id: 'zh-CN', name: '中文' }],
   resolve: {
-    includes: ["./src", "./docs"],
-    previewLangs: [],
+    // includes: ["./src", "./docs"],
+    docDirs: ['docs'], // 2.0 默认值
+    atomDirs: [{ type: 'component', dir: 'src' }], // 2.0 默认值
   },
-  navs: [...getBookNavs()],
+  
   polyfill: false,
-  nodeModulesTransform: {
-    type: "none",
-  },
   exportStatic: {},
   analytics: isDev
     ? false
